@@ -14,5 +14,18 @@ $(function(){
             $(this).find(".mobile").slideUp(200);  
         }
       );
-      //
+      //分类显示
+     $(".classify-li li").mouseenter(
+         function(){
+          index=$(this).index();
+         $(".classify_nav_box").eq(index).show();
+         $(".classify_nav_box").eq(index).siblings(".classify_nav_box").hide();
+         }
+        );
+       $(".classify-bottom").mouseleave(function(){
+           $(".classify_nav_box").hide();
+       })
+      
+         
+         
 })

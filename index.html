@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/reset.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper-4.3.5.min.css">
     <title>中关商城</title>
 </head>
 <body>
@@ -55,6 +56,7 @@
             <i class="icon menu"></i> 全部分类 <i class="icon x-j"></i>
     </div>
     <div class="classify-bottom">
+        
         <div class="classify-li">
             <ul>
                 <li class="select"><i class="c-icon history"></i> 文学与历史 <i class="icon y-j"></i></li>
@@ -65,9 +67,113 @@
                 <li><i class="c-icon comics"></i>漫画图书</li>
             </ul>
         </div>
-        <div class="classify-dropdown"></div>
+        <div class="classify_nav_box">
+                <h2>文学</h2>
+                <a href="#">文集</a>
+                <a href="#">当代诗歌</a>
+                <a href="#">古代诗歌</a>
+                <a href="#">名家作品</a>
+                <a href="#">戏剧</a>
+                <a href="#">随笔</a>
+                <h2>历史</h2>
+                <a href="#">中国史</a>
+                <a href="#">世界史</a>
+                <a href="#">史家名著</a>
+                <a href="#">文物考古</a>
+                <a href="#">地方史记</a>
+                <a href="#">历史地理</a>
+                <img src="images/history.png" alt="" style="padding:0">
+        </div>
+        <div class="classify_nav_box">
+                <h2>小说</h2>
+                <a href="#">侦探/悬疑</a>
+                <a href="#">四大名著</a>
+                <a href="#">外国小说</a>
+                <a href="#">武侠/玄幻</a>
+                <a href="#">历史/科幻</a>
+                <a href="#">官场</a>
+                <a href="#">惊悚/恐怖</a>
+                <h2>童话</h2>
+                <a href="#">幼儿启蒙</a>
+                <a href="#">科普/百科</a>
+                <a href="#">玩具书</a>
+                <a href="#">少儿英语</a>
+                <a href="#">外国儿童文学</a>
+                <a href="#">中国儿童文学</a>
+                <img src="images/fiction.png" alt="" style="padding:0">
+        </div>
+        <div class="classify_nav_box">
+                <h2>科学</h2>
+                <a href="#">科普读物</a>
+                <a href="#">计算机/网络</a>
+                <a href="#">建筑</a>
+                <a href="#">医学</a>
+                <a href="#">工业技术</a>
+                <a href="#">自然科学</a>
+                <a href="#">农业/林业</a>
+                <br>
+                
+                <a href="#">天文学</a>
+                <a href="#">地理</a>
+                <a href="#">数学</a>
+                <a href="#">化学</a>
+                <a href="#">物理</a>
+                
+                <img src="images/techo.png" alt="">
+        </div>
+        <div class="classify_nav_box">
+                <h2>电子书</h2>
+                <a href="#">技术类</a>
+                <a href="#">小说类</a>
+                <a href="#">逻辑类</a>
+                <a href="#">设计类</a>
+                <a href="#">文学类</a>
+                <a href="#">科学类</a>
+                <br>
+                <br>
+                <br>
+                <br>
+                <img src="images/ebook.png" alt="">
+        </div>
+        <div class="classify_nav_box">
+                <h2>生活</h2>
+                <a href="#">两性</a>
+                <a href="#">孕期育儿</a>
+                <a href="#">亲子家教</a>
+                <a href="#">保健运动</a>
+                <a href="#">休闲</a>
+                <a href="#">手工DIY</a>
+                <a href="#">美食</a>
+                
+                
+                <a href="#">家居家庭</a>
+                <a href="#">旅游</a>
+                <a href="#">风水占卜</a>
+                
+                
+                <img src="images/life.png" alt="">
+        </div>
+        <div class="classify_nav_box">
+                <h2>漫画图书</h2>
+                <a href="#">日本漫画</a>
+                <a href="#">中国漫画</a>
+                <a href="#">美国漫画</a>
+                <a href="#">热血青春</a>
+                <a href="#">惊悚恐怖</a>
+                <a href="#">玄幻都市</a>
+                <a href="#">纯爱校园</a>
+                <br>
+                
+                <a href="#">爆笑生活</a>
+                <a href="#">推理悬疑</a>
+                <a href="#">动作战争</a>
+                
+                <img src="images/comic.png" alt="">
+        </div>
+
     </div>
     </div>
+    
     <ul class="clearfix">
         <li><a href="index.html" class="current">首页</a></li>
         <li><a href="#">实体书</a></li>
@@ -76,7 +182,32 @@
         <li><a href="#">书籍周边</a></li>
     </ul>
 </div>
+<div class="swiper-container banner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="#"><img src="images/banner1.jpg" alt=""></a></div>
+            <div class="swiper-slide"><a href="#"><img src="images/banner2.jpg" alt=""></a></div>
+            <div class="swiper-slide"><a href="#"><img src="images/banner3.jpg" alt=""></a></div>
+        </div>
+        <div class="swiper-button-prev"></div><!--左箭头-->
+        <div class="swiper-button-next"></div>
+</div>
 <script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/swiper-4.3.5.min.js"></script>
 <script src="js/index.js"></script>
+<script>        
+        var mySwiper = new Swiper ('.swiper-container', {
+            autoplay: {
+           disableOnInteraction: false,
+           delay: 5000,
+         },
+         loop:true,
+         simulateTouch : false,
+          // 如果需要前进后退按钮
+          navigation: {
+           nextEl: '.swiper-button-next',
+           prevEl: '.swiper-button-prev',
+         },
+        })        
+        </script>
 </body>
 </html>
