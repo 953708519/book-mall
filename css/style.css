@@ -1,6 +1,7 @@
  .body,html{
   width: 100%;
   min-width: 1200px;
+  background-color: #f7f7f7;
  }
  i{
      display: inline-block;
@@ -330,4 +331,73 @@
 .banner{
     max-width: 100%;
     height: 400px;
+}
+
+.newbook{
+    padding: 30px;
+   
+}
+.smalltitle{
+    background: url('../images/smalltitle.png') no-repeat ;
+	padding-left: 99px;
+    height: 43px;
+   
+    padding: 10px 0;
+}
+.newbook .nb-title{
+    background-position: 0 0;
+}
+.newbook .nb-item{
+    float: left;
+    width: 200px;
+    height: 300px;
+    padding: 20px 15px;
+    margin-left: 12px;
+    text-align: center;
+    background-color: #fff;
+   
+}
+.newbook .nb-item:hover{
+    box-shadow: 1px 1px 4px #ccc, -1px 1px 10px #ccc;
+    -webkit-box-shadow: 1px 1px 4px #ccc, -1px 1px 10px #ccc;
+}
+.newbook .nb-box{
+    padding: 30px 0;
+}
+.nb-box ul{
+    margin-left: -12px;
+  
+}
+.nb-item .pic{
+    display: block;
+    margin-bottom: 22px;
+}
+.nb-item .pic img{
+   vertical-align: top;
+   
+}
+.nb-item:hover .pic img{
+    transform: scale(1.1);
+}
+.book-name{
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.author{
+    font-size: 16px;
+    padding: 0 20px;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    color: #aaa;
+}
+.book-price{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: red;
 }
