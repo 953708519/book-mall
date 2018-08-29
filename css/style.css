@@ -2,6 +2,7 @@
   width: 100%;
   min-width: 1200px;
   background-color: #f7f7f7;
+
  }
  i{
      display: inline-block;
@@ -41,7 +42,7 @@
  .f_right{
      float: right;
  }
- .f_right>ul>li{
+ .topnav>ul>li{
      float: left;
      margin: 0 10px;
     height: 29px;
@@ -334,7 +335,7 @@
 }
 
 .newbook{
-    padding: 30px;
+    padding:20px 30px 0 30px;
    
 }
 .smalltitle{
@@ -342,7 +343,7 @@
 	padding-left: 99px;
     height: 43px;
    
-    padding: 10px 0;
+    margin: 10px 0;
 }
 .newbook .nb-title{
     background-position: 0 0;
@@ -362,7 +363,7 @@
     -webkit-box-shadow: 1px 1px 4px #ccc, -1px 1px 10px #ccc;
 }
 .newbook .nb-box{
-    padding: 30px 0;
+    padding: 10px 0;
 }
 .nb-box ul{
     margin-left: -12px;
@@ -386,6 +387,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    color: #333;
 }
 .author{
     font-size: 16px;
@@ -398,6 +400,111 @@
 .book-price{
     height: 30px;
     line-height: 30px;
-    font-size: 14px;
+    font-size: 21px;
+    font-weight: bolder;
     color: red;
+}
+.tj-title{
+    background-position:  0 -78px; 
+}
+.hot-book{
+background-color: #fff;
+width: 594px;
+margin-top: 20px;
+
+}
+.wrapper .blue-title{
+    background-color: #7095ee;
+    font-size: 18px;
+    color: #fff;
+    height:46px;
+    padding: 0 15px;
+    line-height: 46px;
+    font-weight: bold;
+}
+.li-box{
+    float: left;
+    width: 160px;
+    height: 280px;
+    padding: 0 18px;
+    text-align: center;
+    border: 1px solid #f4f4f4;
+}
+.li-box .img{
+    padding: 10px 0;
+    width: 100%;
+}
+.li-box:hover{
+    border: 1px solid #7095ee;
+}
+.famous-author{
+    padding: 20px 30px 0 30px;
+}
+.fa-title{
+    background-position: 0 -150px;
+}
+#wrap{
+   sd
+    padding-top:20px; 
+}
+#wraps .top{
+    width:850px;
+    margin: 0 auto;
+}
+#wraps .top ul
+{
+    list-style-position:outside; 
+    list-style-type:none;
+}
+#wraps .top ul li{
+    float:left; width:121px;
+}
+#wraps .top ul li a
+{    display:block;
+     cursor:pointer;
+     width: 100px;
+    }
+#wraps .top ul li img
+{
+   width: 100%;
+   border-radius:15px; 
+}
+#wraps .down
+{
+    width:1000px; 
+    padding: 20px;
+}
+#wraps .down .f_left atpic{
+  width: 180px;
+  height: 220px;
+}
+#wraps .down .f_left a{
+    display: block;
+}
+#wraps .down .f_left a:hover{
+    text-decoration: none;
+}
+#wraps .down div
+{
+    /* display:none; */
+}
+#wraps .down .authordetail{
+    width:200px;
+}
+.name{
+    text-align: center;
+    font-size: 22px;
+    margin-top: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 28px;
+}
+.detail{
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 12px;
+    line-height: 20px;
+    height: 150px;
+    overflow: hidden;
 }

@@ -24,8 +24,22 @@ $(function(){
         );
        $(".classify-bottom").mouseleave(function(){
            $(".classify_nav_box").hide();
-       })
+       });
       
-         
+    function linkMenu(n) {
+        document.getElementById('link' + n).className = "link" + n + "_o";
+        document.getElementById('abtn' + n).className = "left_bar_over";
+        document.getElementById('showdown' + n).style.display = "block";
+    };
+    
+    function showDiv(n) {
+        for (i=1;i<=7;i++)//i<=7 这里的7为选项卡的li个数
+        {
+            var abtn = document.getElementById('abtn' + i);
+            var showdown = document.getElementById('showdown' + i);
+            abtn.className = i == n ? "left_bar_over": "left_bar_out";
+            showdown.style.display = i == n ? "block": "none";
+        }
+    }   ;    
          
 })
