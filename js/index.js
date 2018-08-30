@@ -17,7 +17,7 @@ $(function(){
       //分类显示
      $(".classify-li li").mouseenter(
          function(){
-          index=$(this).index();
+          var index=$(this).index();
          $(".classify_nav_box").eq(index).show();
          $(".classify_nav_box").eq(index).siblings(".classify_nav_box").hide();
          }
@@ -25,21 +25,15 @@ $(function(){
        $(".classify-bottom").mouseleave(function(){
            $(".classify_nav_box").hide();
        });
-      
-    function linkMenu(n) {
-        document.getElementById('link' + n).className = "link" + n + "_o";
-        document.getElementById('abtn' + n).className = "left_bar_over";
-        document.getElementById('showdown' + n).style.display = "block";
-    };
+    $('#wraps .down>.clearfix').eq(1).show();
+     $('#wraps .top li').mouseenter(function(){
+         var index=$(this).index();
+         console.log(index);
+         console.log($('#wraps .down>.clearfix'));
+         $('#wraps .down>.clearfix').eq(index).show();
+         $('#wraps .down>.clearfix').eq(index).siblings().hide();
+     })
     
-    function showDiv(n) {
-        for (i=1;i<=7;i++)//i<=7 这里的7为选项卡的li个数
-        {
-            var abtn = document.getElementById('abtn' + i);
-            var showdown = document.getElementById('showdown' + i);
-            abtn.className = i == n ? "left_bar_over": "left_bar_out";
-            showdown.style.display = i == n ? "block": "none";
-        }
-    }   ;    
+
          
 })

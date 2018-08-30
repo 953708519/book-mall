@@ -457,7 +457,8 @@ margin-top: 20px;
     list-style-type:none;
 }
 #wraps .top ul li{
-    float:left; width:121px;
+    float:left; width:100px;
+    margin-right: 21px;
 }
 #wraps .top ul li a
 {    display:block;
@@ -471,8 +472,10 @@ margin-top: 20px;
 }
 #wraps .down
 {
-    width:1000px; 
+    width:1100px; 
     padding: 20px;
+    margin: 0 auto;
+    background-color: #fff;
 }
 #wraps .down .f_left atpic{
   width: 180px;
@@ -484,9 +487,9 @@ margin-top: 20px;
 #wraps .down .f_left a:hover{
     text-decoration: none;
 }
-#wraps .down div
+#wraps .down>.clearfix
 {
-    /* display:none; */
+   display: none;
 }
 #wraps .down .authordetail{
     width:200px;
@@ -505,6 +508,44 @@ margin-top: 20px;
     margin-right: 8px;
     font-size: 12px;
     line-height: 20px;
-    height: 150px;
+    height: 140px;
     overflow: hidden;
+}
+.books{
+    width: 850px;
+}
+.down .down-h-book{
+    width:150px;
+}
+.b-l-r{
+width: 675px;
+}
+.b-l-r a{
+    display: inline-block;
+}
+.b-l-r a{
+    text-decoration: none;
+}
+.b-l-r a:hover .book-name{
+    color: #ec7814;
+    
+}
+.b-l-r .book-price{
+    padding-top: 20px;
+}
+.b-l-r .detail{
+    text-indent: 2em;
+    text-overflow:ellipsis; 
+}
+.else-book{
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 14px;
+    color: #666;
+    line-height: 50px;
+}
+.else-book a{
+    margin-left: 20px;
 }
