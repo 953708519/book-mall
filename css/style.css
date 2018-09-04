@@ -91,6 +91,7 @@
 }
 .head{
     padding:50px 0;
+    background-color: #fff;
 }
 .logo{
     width: 90px;
@@ -107,20 +108,24 @@
     top: 50%;
     margin-top: -16px;
 }
+.search form{
+    height: 100%;
+}
 .keyword{
-    padding: 6px 10px;
+    padding: 0px 10px;
     width: 441px;
-    height: 20px;
+    height: 100%;
     color: #666;
     border: 0 none;
     outline: 0 none;
+    font-size: 16px;
 }
 .sreach-btn{
     position: absolute;
     top: 0;
     right: 0;
     width: 75px;
-    height: 33px;
+    height: 100%;
     color: #fff;
     border: 0 none;
     background: #887f7f;
@@ -172,22 +177,22 @@
 .nav{
     background-color: #fff;
 }
-.nav>ul>li{
+.nav .ul li{
     float: left;
-    padding: 0 30px 0 0;
+    padding: 0 50px 0 0;
     height: 39px;
     font: 18px/39px "Microsoft YaHei";
    
 }
-.nav>ul>li>a:hover{
+.nav .ul li>a:hover{
     color: #CC9966;
 }
-.nav>ul>li>a{
+.nav .ul li>a{
     color: #333;
     text-decoration: none;
 }
-.nav>ul>li:nth-of-type(1){
-    margin-left: 20px;
+.nav .ul li:nth-of-type(1){
+    margin-left: 40px;
 }
 .classify-box{
     float: left;
@@ -306,7 +311,7 @@
     position: absolute;
     top: 0;
     left: 160px;
-    height: 400px;
+    height: 396px;
     background-color: #fff;
    width: 700px;
    overflow: hidden;
@@ -443,9 +448,10 @@ margin-top: 20px;
 .fa-title{
     background-position: 0 -150px;
 }
-#wrap{
-   sd
-    padding-top:20px; 
+#wraps{
+   padding-top:20px; 
+   background-color: #fff;
+   margin-top: 20px;
 }
 #wraps .top{
     width:850px;
@@ -459,6 +465,7 @@ margin-top: 20px;
 #wraps .top ul li{
     float:left; width:100px;
     margin-right: 21px;
+   
 }
 #wraps .top ul li a
 {    display:block;
@@ -466,7 +473,7 @@ margin-top: 20px;
      width: 100px;
     }
 #wraps .top ul li img
-{
+{   border: 1px solid #f5f2f0;
    width: 100%;
    border-radius:15px; 
 }
@@ -548,4 +555,18 @@ width: 675px;
 }
 .else-book a{
     margin-left: 20px;
+}
+.foot{
+    text-align: center;
+    border-top: 1px solid #ebebeb;
+    padding: 37px 0;
+    color: #666;
+    background-color: #f5f5f5;
+    width: 100%;
+    margin-top: 40px;
+}
+.foot p{
+    height: 26px;
+    line-height: 26px;
+    color: #666;
 }
