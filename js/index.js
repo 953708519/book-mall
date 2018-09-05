@@ -32,8 +32,22 @@ $(function(){
          console.log($('#wraps .down>.clearfix'));
          $('#wraps .down>.clearfix').eq(index).show();
          $('#wraps .down>.clearfix').eq(index).siblings().hide();
-     })
-    
+     });
 
+     $('#fix-nav').css('display','none');
+     $('#fix-nav').scrollTop(3000).css('display','block');
+
+    
+     
          
-})
+});
+
+function navSlide(ele,speed){ 
+    if(!speed) speed = 300;
+    if(!ele){
+    $("html,body").animate({scrollTop:0},speed);
+    }else{
+    if(ele.length>0) $("html,body").animate({scrollTop:$(ele).offset().top},speed);
+   }
+    return false;
+}

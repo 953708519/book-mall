@@ -570,3 +570,28 @@ width: 675px;
     line-height: 26px;
     color: #666;
 }
+.fix-bar{
+    left: 3%;
+    position: fixed;
+    width: 80px;
+    background-color: #908787;
+    overflow: hidden;
+    top:80px;
+    z-index: 50;
+}
+.fix-bar a{
+    position: relative;
+    display: block;
+    height: 38px;
+    border-bottom: 1px solid #a19999;
+    font-size: 14px;
+    line-height: 38px;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+.fix-bar a:hover{
+background-color:#ec7814;
+
+}
