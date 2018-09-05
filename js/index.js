@@ -28,14 +28,18 @@ $(function(){
     $('#wraps .down>.clearfix').eq(1).show();
      $('#wraps .top li').mouseenter(function(){
          var index=$(this).index();
-         console.log(index);
-         console.log($('#wraps .down>.clearfix'));
+         
          $('#wraps .down>.clearfix').eq(index).show();
          $('#wraps .down>.clearfix').eq(index).siblings().hide();
      });
-
-     $('#fix-nav').css('display','none');
-     $('#fix-nav').scrollTop(3000).css('display','block');
+      $(window).scroll(function(){
+        if( $(window).scrollTop()<300){
+            $('#fix-nav').fadeOut(300);
+         }
+         else
+         $('#fix-nav').fadeIn(300);
+      })
+        
 
     
      

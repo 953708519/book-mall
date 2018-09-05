@@ -578,6 +578,7 @@ width: 675px;
     overflow: hidden;
     top:80px;
     z-index: 50;
+    display: none;
 }
 .fix-bar a{
     position: relative;
