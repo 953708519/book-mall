@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- Custom Theme files -->
+<link href="css/login.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- js -->
+<script src="js/jquery.js"></script>
+<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+<!-- //js -->
+<title>注册登录</title>
+</head>
+<style>
+            
+            #register span.tip 
+            { 
+                margin: 6px 0 0 10px; 
+				text-align: left;
+				 display: inline;	 
+            }
+</style>
+<body>
+	<!-- main -->
+	<div class="main">
+		<h1>亚龙书城登录/注册</h1>
+		<div class="login-form">
+			<div class="sap_tabs w3ls-tabs">
+				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+					<ul class="resp-tabs-list">
+						<li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>登录</span></li> 
+						<li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><label>/</label><span>注册</span></li>
+					</ul>	
+					<div class="clear"> </div>
+					<div class="resp-tabs-container">
+						<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+							<div class="login-agileits-top"> 
+								<form action="http://134.175.20.253/login1.1/admin/logincheck.php" method="post">
+									<p>用户名 </p>
+									<input type="text" name="username" class="username" required=""/>
+									
+									<p>密码</p>
+									<input type="password" name="password" id="password" required=""/>	 
+									<input type="checkbox" name="autoLogin" id="autoLogin" value="">
+									<label for="autoLogin"><span></span> 一周内自动登录？</label> 
+									<input type="submit" name="submit" value="登录 >" class="btu">
+								</form>  
+							</div>
+							<div class="login-agileits-bottom"> 
+								<p><a href="#">忘记密码?</a></p>
+							</div> 
+						</div> 
+						<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+							<div class="login-agileits-top sign-up"> 
+								
+									<p>用户名 </p>
+									<input type="text" name="User Name"  class="reg_user" required=""/>
+									<span class="tip user_hint"></span>
+									<p>密码</p>
+									<input type="password" name="Password" class="reg_password" placeholder="" required=""/>
+									<span class="tip password_hint">111</span>
+									<p>重复密码</p>
+									<input type="password" name="Password" placeholder="" class="reg_confirm" required=""/>	
+									<span class="tip confirm_hint"></span>
+									<p>邮箱地址 </p>
+									<input type="text" name="Email" class="reg_email" required=""/>
+									<p></p>
+									<button type="button" name="button1" id="yzm_button">获取验证码</button>
+									<span class="tip email_hint"></span>
+									<p>输入验证码</p>
+									<input type="text" name="Code" class="reg_code" required=""/>  
+									<span class="tip code_hint"></span>	
+									</br></br>
+									<button value="" id="red_button">注册</button>	
+								 
+							</div>
+						</div>
+					</div>							
+				</div>	 
+			</div> 
+			<!-- ResponsiveTabs js -->
+			<script type="text/javascript">
+				$(document).ready(function () {
+					$('#horizontalTab').easyResponsiveTabs({
+						type: 'default', //Types: default, vertical, accordion           
+						width: 'auto', //auto or any width like 600px
+						fit: true   // 100% fit in a container
+					});
+				});
+			</script>
+			<!-- //ResponsiveTabs js -->
+		</div>	
+	</div>	
+	<!-- //main -->
+	<!-- copyright -->
+	<div class="copyright">
+		<p> © 2016 Trendy Tab Login Form . All rights reserved | Design by <a href="http://xmoban.cn/" target="_blank">xmoban.cn</a></p>
+	</div>
+	<!-- //copyright --> 
+</body>
+<!-- 注册验证 -->
+<script>
+var user_Boolean = false;
+
+var password_Boolean = false;
+
+var varconfirm_Boolean = false;
+
+var emaile_Boolean = false;
+
+var yzm_Boolean = false;
+
+//用户名认证
+$('.reg_user').blur(function(){
+  
+  if (!(/^[a-z0-9_-]{4,16}$/).test($(".reg_user").val())){
+	  
+	  $('.user_hint').html("请输入4-16位用户名").css("color","red");
+      user_Boolean = false;
+      return ;  
+  }
+        $.ajax({
+                url:"http://134.175.20.253/login1.1/admin/checkregister.php",
+                type:"post",
+                data:{name: $(".reg_user").val()},
+                success:function(data){
+                    if (data==0)
+                    {
+                        $('.user_hint').html("用户名已存在").css("color","red");
+                        user_Boolean = false;
+                        //alert("用户名已被注册，请重新输入！");
+                        return ;
+                    }
+                    else{
+						user_Boolean = true;
+						
+						return;
+					}
+                    
+                },
+                error:function(data){
+                    console.log(data);
+                }
+			});
+			$('.user_hint').html("✔  可用用户名").css("color","green");
+        
+});
+//密码认证
+$('.reg_password').blur(function(){
+
+  if ((/^[a-z0-9_-]{6,16}$/).test($(".reg_password").val())){
+
+    $('.password_hint').html("✔ 可用密码").css("color","green");
+
+    password_Boolean = true;
+
+  }else 
+  {
+
+    $('.password_hint').html("请输入6-16位密码").css("color","red");
+
+    password_Boolean = false;
+
+  }
+
+});
+
+$('.reg_confirm').blur(function(){
+
+  if (($(".reg_password").val())==($(".reg_confirm").val())){
+
+    $('.confirm_hint').html("✔").css("color","green");
+
+    varconfirm_Boolean = true;
+
+  }else {
+
+    $('.confirm_hint').html("两次输入密码不同").css("color","red");
+    varconfirm_Boolean = false;
+
+  }
+
+});
+//邮箱验证
+$('.reg_email').blur(function(){
+
+  if (!(/^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/).test($(".reg_email").val())||$(".reg_email").val()!=(/^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/)){
+
+    $('.email_hint').html("Email format error").css("color","red");
+
+    emaile_Boolean = false;
+
+  }else 
+    emaile_Boolean = true;
+	
+	$.ajax({
+                url:"http://134.175.20.253/login1.1/admin/checkregister.php",
+                type:"post",
+                data:{email: $(".reg_email").val()},
+                success:function(data){
+                   console.log(data);
+                    if (data==0)
+                    {
+                        $('.email_hint').html("mailbox has been registered").css("color","red");
+                        emaile_Boolean = false;
+                        return ;
+                    }
+                    else
+                    emaile_Boolean = true;
+                },
+                error:function(data){
+                    console.log(data);
+                }
+            });
+            if( emaile_Boolean == true)
+
+  $('.email_hint').html("✔:邮箱已被注册").css("color","green");
+
+
+});
+
+//发送验证码
+$('#yzm_button').click(function(){
+    
+    if(emaile_Boolean==false)
+    {
+       return;
+    }
+    else if(emaile_Boolean!=false)
+    {
+        $.ajax({
+                url:"http://134.175.20.253/login1.1/admin/checkregister.php",
+                type:"post",
+                data:{
+                    target_email: $('.reg_email').val()
+                },
+                success:function(data){  
+                        $("#yzm_button").attr({"disabled":"disabled"});
+						$("#yzm_button").css("background-color", "lightslategrey");
+						$("#yzm_button").css("border", "lightslategrey");
+                        var i=60;
+                        var timehwnd=setInterval(function(){
+                        i--;
+                            if(i == 0)
+                            {
+                                $("#yzm_button").html("获取验证码");
+                                $("#yzm_button").removeAttr("disabled");
+								$("#yzm_button").css("background-color", "#1c4eda");
+								$("#yzm_button").css("border", "#1c4eda");
+                                clearInterval(timehwnd);
+                            }
+                            else
+                            {
+								
+								$("#yzm_button").html("Once again("+i+")");
+                            }
+                        },1000);
+                         return ;
+                },
+                error:function(data){
+                    console.log(data);
+                }
+            });
+    }
+});
+
+// //手机验证
+// $('.reg_mobile').blur(function(){
+
+//   if (!(/^1[34578]\d{9}$/).test($(".reg_mobile").val())){
+//     Mobile_Boolean = false;
+//     $('.mobile_hint').html("×").css("color","red");
+//     return ;
+//   }
+//   else 
+//     Mobile_Boolean = true;
+   
+//   $.ajax({
+//                 url:"checkregister.php",
+//                 type:"post",
+//                 data:{telnum: $(".reg_mobile").val()},
+//                 success:function(data){
+//                    console.log(data);
+//                     if (data==0)
+//                     {
+//                         $('.mobile_hint').html("×").css("color","red");
+//                         Mobile_Boolean = false;
+//                         //alert($('.reg_mobile').val()+"该手机号已被注册！");
+//                         return ;
+//                     }
+//                     else
+//                     user_Boolean = true;
+//                 },
+//                 error:function(data){
+//                     console.log(data);
+//                 }
+//             });
+//             if( Mobile_Boolean == true)
+//             $('.mobile_hint').html("✔").css("color","green");
+// });
+//验证码认证
+$('.reg_code').blur(function(){
+  var  text= $(".reg_code").val();
+  $.ajax({
+                url:"http://134.175.20.253/login1.1/admin/checkregister.php",
+                type:"post",
+                data:{yzmcode: text},
+                success:function(data){
+                   console.log(data);
+                    if (data==1)
+                    {
+                        $('.code_hint').html("✔").css("color","green");
+                        yzm_Boolean = true;
+                        return ;
+                    }
+                    else{
+                        $('.code_hint').html("验证码错误或失效").css("color","red");
+                    yzm_Boolean = false;}
+                },
+                error:function(data){
+                    console.log(data);
+                }
+            });                              
+});
+
+$('#red_button').click(function(){
+
+  if(user_Boolean && password_Boolean && varconfirm_Boolean && emaile_Boolean  &&yzm_Boolean== true){
+
+    $.ajax({
+                url:"http://134.175.20.253/login1.1/admin/Insert.php",
+                type:"post",
+                data:{
+                    username: $('.reg_user').val(),
+                    password: $('.reg_password').val(),
+                    Email: $('.reg_email').val(),   
+                },
+                success:function(data){
+                   console.log(data);
+                    if (data==1)
+                    { 
+					   alert("注册成功");
+					   $('.reg_user').val(""); 
+					   $('.reg_password').val("");
+					   $('.reg_confirm').val("");
+					   $('.reg_email').val("");
+                       $('.reg_code').val("");
+                        return ;
+                    }
+                    else
+                    alert(data);
+                },
+                error:function(data){
+                    console.log(data);
+                }
+            });
+            
+    
+
+  }else {
+
+    alert("请完善你的注册信息");
+
+  }
+
+});
+
+
+</script>
+<!-- 登录验证 -->
+<script>
+
+</script>
+</html>

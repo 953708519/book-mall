@@ -38,12 +38,36 @@ $(function(){
          }
          else
          $('#fix-nav').fadeIn(300);
-      })
-        
+      });
 
-    
-     
-         
+
+  
+  $.ajax({
+          url:"http://134.175.20.253/login1.1/admin/logincheck.php",
+          type:"post",
+          data:{user:0},
+          success:function(data){
+             console.log(data);
+              if (data==0)
+              {
+                  $('#user').attr("herf","login.html");
+                  return ;
+              }
+              else{
+              $.ajax({
+                url:"http://134.175.20.253/login1.1/admin/logincheck.php",
+                 type:"post",
+                 data:{username:0},
+                 success:function(data){
+                  $('#user').text(data);
+                  $('#user').attr("herf","#");
+                 },
+              
+              })}
+          },
+            });
+           
+       
 });
 
 function navSlide(ele,speed){ 
