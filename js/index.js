@@ -50,7 +50,7 @@ $(function(){
              console.log(data);
               if (data==0)
               {
-                  $('#user').attr("herf","login.html");
+                  $('#user').attr("href","login.html");
                   return ;
               }
               else{
