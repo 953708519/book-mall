@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="index/css/head.css"/>
+		<link rel="stylesheet" type="text/css" href="index/css/go.css"/>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/icon.css">
+		<style>
+			.model_submit{
+				width: 100%;
+
+			}
+		.btn_goods_remind {
+    border: 1px solid #94193f;
+    height: 48px;
+    width: 216px;
+    background-color: #fbfbfb;
+    text-align: center;
+    line-height: 48px;
+    color: #94193f;
+    cursor: pointer;
+    font-size: 16px;
+	margin: 0 auto;
+}
+		</style>
+	</head>
+	<body>
+		<div class="top_l">
+			<div class="wrapper clearfix">
+				<div class="f_left">
+					<span> Hi~欢迎来到亚龙书城，<a href="login.html" id="user">请登录</a></span>
+					&nbsp; &nbsp; &nbsp; &nbsp;
+				  
+				</div>
+				<div class="f_right topnav">
+					   <ul>
+						<li><a href="#"> 我的订单</a></li>
+						<li><a href="submit.html">购物车</a></li>
+						<li class="l_mobile"><a href="#">手机商城<i class="xiahua"></i></a>
+						<div class="mobile">
+							<img src="images/mobilewechat.png" alt="">
+						</div></li>
+						<li><a href="#">帮助中心</a></li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="head">
+			<div class="wrapper clearfix">
+				<div class="f_left"><a href="index.html">
+					<img src="images/logo.png" alt="" class="logo"></a>
+				</div>
+				<div class="search">
+					<form action="#">
+						<input type="text" class="keyword">
+						<input type="submit" class="sreach-btn" value="搜索">
+					</form>
+				</div>
+				<div class="f_right ownmenu">
+					<a href="submit.html"><i class="goods icon"></i>购物车</a>
+				   <a href="#"><i class="quan icon"></i>我的优惠券</a>
+				   <a href="#"><i class="order icon"></i>我的订单</a>
+				</div>
+			</div>
+		</div>
+		<!--tip-->
+		
+		<div class="public_b">
+			<div class="w1200">
+					<div class="remat">
+							<div class="d_h2">
+								<ul>
+									<li class="on">商品清单</li>
+								</ul>
+							</div>
+						</div>
+				<div class="car_no_goods">
+					<img src="index/image/car_no_goods.jpg"/>
+					<div class="no_goods">
+						<p class="no_goods_t">亲，您的购物车空空如也，快去抢购心仪商品吧~</p>
+						<p><a href="index.html" class="no_goods_buy">立即购买</a></p>
+					</div>
+				</div>
+				
+				<div class="shop_tit">
+					<div class="cart_checkbox">
+						<span>商品图片</span>
+					</div>
+					<div class="column cart_standard">商品名称</div>
+					<div class="column t_price">单价(元)</div>
+					<div class="column t_quantity">数量</div>
+					<div class="column t_sum">小计(元)</div>
+				</div>
+				<div class="item_list" id="goods">
+					
+				</div>
+				<!--为你推荐-->
+				<div class="guesslike_div">
+					<div class="remat">
+						<div class="d_h2">
+							<ul>
+                                <li class="on">猜你喜欢</li>
+                            </ul>
+						</div>
+						<div class="detail_l_con4">
+							<div class="noguess">暂无商品向您推荐</div>
+						</div>
+					</div>
+				</div>
+				<!--为你推荐-->
+			</div>
+		</div>
+		<!--tipend-->
+		<!--底部公用-->
+		<div class="foot">
+				<div class="wrapper">
+					<p>Copyright (C) 亚龙书店 20018-2020, All Rights Reserved</p>
+					<p>DEMO项目，欢迎fork</p>
+					<p>亚龙书店收录的免费小说作品、频道内容、书友评论、用户上传文字、图片等其他一切内容及在亚龙书店网所做之广告均供参考，版权问题请联系。</p>
+				</div>  
+			</div>
+		<div id="zhezhao" style="display:none">
+			<div class="cover">
+				
+			</div>
+			<div class="zhifu">
+				<img src="images/zhifu.jpg" alt="" style="width:200px;margin:0 auto;display: block">
+				<p style="text-align:center;margin-top:50px;">扫描二维码支付<span id="num" style="color:red;font-weight:bold"></span>件商品，共<span id="cost" style="color:red;font-size:20px;font-weight:bold;"></span>元</p>
+				<div class="model_submilt" >
+					<div class="btn_goods_remind" id="return" style="margin-top:20px;">点击返回</div>
+				</div>
+			</div>
+		</div>
+			<script src="js/jquery-1.11.3.min.js"></script>
+			<script src="js/submit.js"></script>
+			
+	</body>
+</html>

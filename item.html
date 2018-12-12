@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="index/css/head.css" />
+		<link rel="stylesheet" type="text/css" href="index/css/iemt.css" />
+		<link rel="stylesheet" href="css/reset.min.css">
+        <link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		    $(function(){
+		    	//添加一个点击事件
+		    	$(".color_ul li").click(function(){
+		    		//切换颜色
+		    		$(this).addClass("on").siblings().removeClass("on");
+		    	});
+		    	//添加商品数量
+		    	$(".wrap_input .btn-add").click(function(){
+		    		//获得input值
+		    		var y = $("#buy_num").val();
+		    		//转整
+		    		x = parseInt(y)+1;
+		    		$("#buy_num").val(x); 
+		    		
+		    	});
+		    	//添加商品数量
+		    	$(".wrap_input .btn-reduce").click(function(){
+		    		//获得input值
+		    		var y = $("#buy_num").val();
+		    		//转整
+		    		x = parseInt(y)-1;
+		    		if(x>0){
+		    		   $("#buy_num").val(x); 
+		    		}
+		    		
+		    	});
+		    });
+		</script>
+		
+	</head>
+	<body>
+		<!--顶部公用-->
+		<div class="header">
+			<!--顶部导航-->
+			<div class="top_l">
+					<div class="wrapper clearfix">
+						<div class="f_left">
+							<span> Hi~欢迎来到亚龙书城，<a href="login.html" id="user">请登录</a></span>
+							&nbsp; &nbsp; &nbsp; &nbsp;
+						</div>
+						<div class="f_right topnav">
+							   <ul>
+								<li><a href="#"> 我的订单</a></li>
+								<li><a href="submit.html">购物车</a></li>
+								<li class="l_mobile"><a href="#">手机商城<i class="xiahua"></i></a>
+								<div class="mobile">
+									<img src="images/mobilewechat.png" alt="">
+								</div></li>
+								<li><a href="#">帮助中心</a></li>
+								
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="head">
+						<div class="wrapper clearfix">
+							<div class="f_left">
+								<img src="images/logo.png" alt="" class="logo">
+							</div>
+							<div class="search">
+								<form action="#">
+									<input type="text" class="keyword">
+									<input type="submit" class="sreach-btn" value="搜索">
+								</form>
+							</div>
+							<div class="f_right ownmenu">
+								<a href="submit.html"><i class="goods icon"></i>购物车</a>
+							   <a href="#"><i class="quan icon"></i>我的优惠券</a>
+							   <a href="#"><i class="order icon"></i>我的订单</a>
+							</div>
+						</div>
+					</div>
+			<!--菜单-->
+			<div class="nav " style="float:none">
+					<div class="wrapper">
+					<div class="classify-box">
+					<div class="classify-top">
+							<i class="icon menu"></i> 全部分类 <i class="icon x-j"></i>
+					</div>
+					
+					</div>
+					
+					<ul class="clearfix ul">
+						<li><a href="index.html" class="current">首页</a></li>
+						<li><a href="#">实体书</a></li>
+						<li><a href="#">电子书</a></li>
+						<li><a href="#">二手书</a></li>
+						<li><a href="#">书籍周边</a></li>
+					</ul>
+					</div>
+				</div>
+		</div>
+		<!--头部end-->
+		<div class="w1200">
+			<!--分类导航-->
+			<div class="top_nv">
+				<span><a href="index/index.html">首页</a></span>
+				<span>></span>
+				<span><a href="index.html">书城</a></span>
+				<span>></span>
+				<span><a href="index.html">书籍</a></span>
+			</div>
+			<!--分类导航-->
+			<div class="con_content">
+				<!--提交区域-->
+				<div class="con_top">
+					<div class="con_top_l">
+						<div class="tab-w">
+							<!--放大镜-->
+							<div class="divw">
+								<a href="">
+									<span class="zoomPad">
+	    								<img  id="left">
+	    								<div style="top: 148px; left: 153.5px; width: 180px; height: 180px; position: absolute; border-width: 1px; display: none;" class="zoomPup"></div>
+	    								<div style="position: absolute; z-index: 500; left: 390px; top: 0px; display: none;" class="zoomWindow">
+	    									<div style="width: 380px;" class="zoomWrapper"><div style="width: 100%; position: absolute; display: block;" class="zoomWrapperTitle"></div>
+	    									    <div style="width: 100%; height: 380px;" class="zoomWrapperImage"><img src="" style="position: absolute; border: 0px none; display: block; left: -5000px; top: 0px; width: 800px; height: 800px;">
+	    									    </div>
+	    									</div>
+	    								</div>
+	    							</span>
+								</a>
+							</div>
+							<!--放大镜-->
+							<!--tab,ajax-->
+							<br>
+							<br>
+							<!--tab,ajax-->
+						</div>
+						<div class="detail_share">
+							<div class="detail_sc">
+								<i class="i_addsc"></i> 收藏商品
+							</div>
+						</div>
+					</div>
+					<div class="con_top_r">
+						<div class="detail_top">
+							<h1 class="detail_tit">书名</h1>
+							<h2 class="detail_tit_md">作者：</h2>
+							<div class="price_wrap">
+								<div class="detail_price">
+									<span class="price_now">
+	    								<b class="em_sign">￥</b>
+	    								298.00
+	    							</span>
+								</div>
+							</div>
+							<div class="detail_freight">
+								<span class="pop_tit ">运费：</span>
+								<span id="freight" class="pop_black">包邮</span>
+							</div>
+							<div class="detail_color">
+								<div class="model_wrap color_wrap">
+									<span class="pop_tit">样式</span>
+									<ul class="color_ul">
+										<li class="no_kc on">
+											<a href="javascript:void(0)" data-param="{valid:51008, key:1}">最新出版</a>
+											<b></b>
+										</li>
+										<li class="no_kc">
+											<a href="javascript:void(0)" data-param="{valid:51014, key:1}">老版</a>
+											<b></b>
+										</li>
+									</ul>
+								</div>
+								<div class="model_wrap color_wrap">
+									<span class="pop_tit">出版社</span>
+									<span class="pop_tit" id="press" style="width: 200px"></span>
+								</div>
+								<div class="model_wrap count_wrap">
+									<span class="pop_tit">数量：</span>
+									<div class="wrap_input">
+										<a href="javascript://" data-param="0" class="btn-add">-</a>
+										<a href="javascript://" data-param="0" class="btn-reduce">+</a>
+										<input value="1" id="buy_num" class="text" onkeyup="this.value=this.value.replace(/\D/g, '');">
+									</div>
+								</div>
+								<div class="model_wrap">
+									
+									<div class="model_submilt" style="float:left;margin-left: 50px">
+											<div class="btn_goods_remind" id="cart">添加到购物车</div>
+										</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--提交区域end-->
+				<!--展示区域-->
+				<div class="con_tab">
+					<div class="con_nav">
+						<div class="con_nav_c">
+							<div class="w1200">
+								<ul>
+									<li class="on "><a href="javascript:;">商品详情</a></li>
+									<li><a href="javascript:;">商品参数</a></li>
+									<li><a href="javascript:;">为您推荐</a></li>
+								</ul>
+								<div class="fix_add_car">
+									<div class="db_price">
+										<em>¥</em>298.00
+									</div>
+									<a class="fixed_add_car" href="javascript:;">加入购物车</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="display">
+					<div class="goods_box">
+						<div class="detail_lists">
+							<div class="d_h2">
+								<h2>商品详情</h2>
+							</div>
+							<div class="detail_con">
+								<img src="" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="premeter_box">
+						<div class="detail_lists">
+							<div class="d_h2">
+								<h2>简介</h2>
+							</div>
+							<div class="detail_con_l">
+								<ul>
+									<li>
+										<div class="d_l_con1_l"></div>
+									
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+	    		    <div class="recommend_box">
+	    		    	<div class="detail_lists">
+	    		    		<div class="d_h2">
+	    		    			<h2>为您推荐</h2>
+	    		    		</div>
+	    		    		<div class="detail_l_con4">
+	    		    			<div class="d_l_con4_list">
+	    		    				<ul id="tuijian" style=" text-align: center">
+	    		    					
+	    		    				</ul>
+	    		    		    </div>
+	    		    		    <div class="hd">
+	    		    		    	<a href="javascript:;" class="prev"><</a>
+	    		    		    	<a href="javascript:;" class="next">></a>
+	    		    		    </div>
+	    		    		</div>
+	    		    	</div>
+	    		    </div>
+				</div>
+	    		<!--展示区域end-->
+	    	</div>
+	    </div>
+		<div class="foot">
+				<div class="wrapper">
+					<p>Copyright (C) 亚龙书店 20018-2020, All Rights Reserved</p>
+					<p>DEMO项目，欢迎fork</p>
+					<p>亚龙书店收录的免费小说作品、频道内容、书友评论、用户上传文字、图片等其他一切内容及在亚龙书店网所做之广告均供参考，版权问题请联系。</p>
+				</div>  
+			</div>
+    <script src="js/item.js"></script>
+	</body>
+</html>
